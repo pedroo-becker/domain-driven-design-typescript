@@ -17,19 +17,24 @@ export default class Order {
 
     validate(): boolean {
         if (this._id.length === 0) {
-          throw new Error("Id is required");
+            throw new Error("Id is required");
         }
         if (this._customerId.length === 0) {
-          throw new Error("CustomerId is required");
+            throw new Error("CustomerId is required");
         }
         if (this._items.length === 0) {
-          throw new Error("Items are required");
+            throw new Error("Items are required");
         }
         if (this._items.some((item) => item.quantity <= 0)) {
-          throw new Error("Quantity must be greater than 0");
+            throw new Error("Quantity must be greater than 0");
         }
         return true;
-      }
+    }
+
+    add(item: OrderItem) {
+        this._items.push(item);
+        this._total =  this.total() ;
+    }
 
     get id(): string {
         return this._id;
