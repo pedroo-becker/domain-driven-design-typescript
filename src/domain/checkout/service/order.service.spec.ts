@@ -1,6 +1,6 @@
 import Order from "../entity/order";
 import OrderItem from "../entity/order_item";
-import Customer from "./customer";
+import Customer from "../../customer/entity/customer";
 import OrderService from "./order.service";
 describe("Order service unit tets", () => {
   it("should place an order", () => {
