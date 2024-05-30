@@ -6,8 +6,6 @@ export default class SendEmailWhenProductIsCreatedHandler
 {
     handle(event: ProductCreatedEvent): void {
         // tslint:disable-next-line:no-console
-        console.log('received ', event)
-        // tslint:disable-next-line:no-console
         console.log(`Sending email to .....`);
     }
 }
