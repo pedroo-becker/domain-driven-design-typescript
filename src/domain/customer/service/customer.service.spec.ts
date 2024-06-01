@@ -7,12 +7,13 @@ import EventHandlerInterface from "../../@shared/event/event.handler.interface";
 import CustomerCreatedHandler1 from "../event/handler/customer-created.handler1";
 import CustomerCreatedHandler2 from "../event/handler/customer-created.handler2";
 import CustomerAddressUpdatedHandler from "../event/handler/customer-address-updated.handler";
+import EventDispatcherInterface from "../../@shared/event/event-dispatcher.interface";
 
 jest.mock("../../../infrastructure/customer/repository/sequelize/customer.repository");
 
 describe("CustomerService unit tests", () => {
     let customerRepository: CustomerRepository;
-    let eventDispatcher: EventDispatcher;
+    let eventDispatcher: EventDispatcherInterface;
     let customerService: CustomerService;
     let addressEvent: EventHandlerInterface;
     let createdEvent1: EventHandlerInterface;

@@ -1,18 +1,18 @@
 import CustomerRepository from "../../../infrastructure/customer/repository/sequelize/customer.repository";
-import EventDispatcher from "../../@shared/event/event-dispatcher";
 import Customer from "../entity/customer";
 import CustomerCreatedEvent from "../event/customer-created.event";
 import Address from "../valueObjects/address";
 import CustomerAddressUpdatedEvent from "../event/customer-address-updated.event";
+import EventDispatcherInterface from "../../@shared/event/event-dispatcher.interface";
 
 
 export default class CustomerService {
 
     private repository: CustomerRepository;
-    private eventDispatcher: EventDispatcher;
+    private eventDispatcher: EventDispatcherInterface;
 
     constructor(repository: CustomerRepository,
-                eventDispatcher: EventDispatcher) {
+                eventDispatcher: EventDispatcherInterface) {
         this.repository = repository;
         this.eventDispatcher = eventDispatcher;
     }
